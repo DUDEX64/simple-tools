@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ "$1" == "" ]; then
+	printf "Usage: durfsleep [date-cmd-phraseable-time]\n"
+	exit 1
+fi
+if [ $UID != 0 ]; then
+	printf "Root Required!\n"
+	exit 1
+fi
+rtcwake -m mem -t $(date --date="$1" +%s)
+exit $?
