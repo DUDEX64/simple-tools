@@ -12,6 +12,7 @@ fi
 if [ "$1" == "summer" ]; then
 	# This is the summer/laptop config
 	printf "Selecting Summer Mode...\n"
+	nvidia-smi -acp RESTRICTED &> /dev/null
 	cpupower frequency-set -g powersave --min 775MHz --max 2GHz &> /dev/null
 	cpupower set -b 15
 	cpupower frequency-info
@@ -20,6 +21,7 @@ fi
 if [ "$1" == "winter" ]; then
 	# This is the winter/desktop config
 	printf "Selecting Winter Mode...\n"
+	nvidia-smi -acp UNRESTRICTED &> /dev/null
 	cpupower frequency-set -g performance --min 775MHz --max 2GHz &> /dev/null
 	cpupower set -b 0
 	cpupower frequency-info
