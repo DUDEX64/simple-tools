@@ -79,7 +79,7 @@ if "%IsAdmin%" EQU "FALSE" (
 	echo This program cannot perform the last programmed task because it must
 	echo have administrative rights.	
 	echo.
-	pause
+	timeout /t 5
 	goto EndProgram
 )
 echo To finish up, a defragmentation is performed on all disks...
