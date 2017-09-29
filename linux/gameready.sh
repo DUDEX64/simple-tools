@@ -14,7 +14,7 @@ if [ "$1" == "summer" ]; then
 	printf "Selecting Summer Mode...\n"
 	nvidia-smi -acp RESTRICTED &> /dev/null
 	nvidia-smi -pm DISABLED &> /dev/null
-	cpupower frequency-set -g powersave --min 775MHz --max 1.7GHz &> /dev/null
+	cpupower frequency-set -g conservative --min 775MHz --max 2GHz &> /dev/null
 	cpupower set -b 15
 	cpupower frequency-info
 	exit 0
@@ -24,7 +24,7 @@ if [ "$1" == "winter" ]; then
 	printf "Selecting Winter Mode...\n"
 	nvidia-smi -acp UNRESTRICTED &> /dev/null
 	nvidia-smi -pm ENABLED &> /dev/null
-	cpupower frequency-set -g performance --min 1GHz --max 2GHz &> /dev/null
+	cpupower frequency-set -g ondemand --min 1.2GHz --max 2GHz &> /dev/null
 	cpupower set -b 0
 	cpupower frequency-info
 	exit 0
