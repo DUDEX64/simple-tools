@@ -1,4 +1,5 @@
 #!/bin/bash
+# !! NVIDIA GPU MACHINES ONLY !!
 # Please change your min/max parameters as required
 # Copyright 2017 Michael Miranda
 if [ $UID != 0 ]; then
