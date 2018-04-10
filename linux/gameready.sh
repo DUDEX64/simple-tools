@@ -24,7 +24,7 @@ if [ "$1" == "desktop" ]; then
 	printf "Selecting Desktop Mode...\n"
 	nvidia-smi -acp UNRESTRICTED &> /dev/null
 	nvidia-smi -pm ENABLED &> /dev/null
-	cpupower frequency-set -g ondemand --min 1.7GHz --max 2GHz &> /dev/null
+	cpupower frequency-set -g performance --min 1.3GHz --max 2GHz &> /dev/null
 	cpupower set -b 0
 	cpupower frequency-info
 	exit 0
